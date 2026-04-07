@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cakir-casino"
+version = "0.1.0"
+description = "Çakır ve Polat replikleriyle süslenmiş tematik CLI casino projesi."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Akın Kökçü" },
+]
+dependencies = [
+  "rich>=13.7,<14.0",
+  "typer>=0.12,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9.0",
+]
+
+[project.scripts]
+cakir-casino = "cakir_casino.cli:run"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["cakir_casino*"]

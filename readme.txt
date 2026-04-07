@@ -1,5 +1,12 @@
-Bu program 202207105011 nolu öğrenci Akın Kökçüye aittir.
-Programda yazı tura oynayabilirsiniz.
-Admin girişi yaparsanız kullanıcıları düzenleyebilir ve logları görüntüleyebilirsiniz
-Admin girişi için kullanıcı adı: cakir
-Admin girişi için şifre: istanbul
+Çakır'ın Mekanı artık modüler bir Python CLI projesidir.
+
+Desteklenen oyunlar:
+- Yazı tura
+- Rulet
+- Blackjack
+
+Varsayılan admin bilgileri:
+- Kullanıcı adı: cakir
+- Şifre: istanbul
+
+Detaylı kullanım için README.md dosyasına bakın.
