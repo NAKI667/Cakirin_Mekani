@@ -10,14 +10,17 @@ class SessionManager:
         self.session_path = session_path
 
     def load(self) -> dict[str, str] | None:
-        if not self.session_path.exists():
+        try:
+            payload = json.loads(self.session_path.read_text(encoding="utf-8"))
+        except (FileNotFoundError, UnicodeDecodeError, json.JSONDecodeError):
             return None
 
-        try:
-            return json.loads(self.session_path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            self.session_path.unlink(missing_ok=True)
+        if not isinstance(payload, dict):
             return None
+        username = payload.get("username")
+        if not isinstance(username, str) or not username.strip():
+            return None
+        return payload
 
     def current_username(self) -> str | None:
         payload = self.load()

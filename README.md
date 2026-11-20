@@ -1,6 +1,6 @@
 # Çakır'ın Mekanı
 
-Çakır'ın Mekanı, klasik yazı-tura ödevini daha ciddi bir Python paketine çeviren tematik bir CLI casino projesidir. Kullanıcı kaydı, admin yönetimi, SQLite tabanlı veri saklama, oyun geçmişi ve üç farklı oyun içerir:
+Çakır'ın Mekanı, yazı-tura ödevinden geliştirilen ve sanal chip kullanan bir Python komut satırı oyunudur. Kullanıcı kaydı, admin yönetimi, SQLite tabanlı veri saklama, oyun geçmişi ve üç farklı oyun içerir:
 
 - Yazı tura
 - Rulet
@@ -9,6 +9,8 @@
 Uygulama `Typer` ve `Rich` kullanır; metinlerde Çakır ve Polat havasını taşıyan kısa replikler yer alır.
 
 ## Kurulum
+
+Python 3.11 veya üzeri gerekir.
 
 ```bash
 python -m venv .venv
@@ -36,8 +38,8 @@ Bu `.exe` çift tıklanınca doğrudan interaktif menüyle açılır. Komut sat�
 
 ```bash
 cakir-casino init-db
-cakir-casino auth register --username polat --password derinmasa
-cakir-casino auth login --username polat --password derinmasa
+cakir-casino auth register --username polat
+cakir-casino auth login --username polat
 cakir-casino profile show
 cakir-casino play coinflip --bet 100 --side yazi
 cakir-casino play roulette --bet 50 --bet-type color --value red
@@ -45,7 +47,7 @@ cakir-casino play blackjack --bet 200
 cakir-casino history --limit 10
 ```
 
-Varsayılan admin hesabı:
+Yerel demo kurulumu sabit bir admin hesabıyla gelir. Bu hesabı yalnız örnek veritabanında kullan:
 
 - Kullanıcı adı: `cakir`
 - Şifre: `istanbul`
